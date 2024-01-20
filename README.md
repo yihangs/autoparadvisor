@@ -5,3 +5,5 @@ This repo contains the trained parameter advisor models for Scallop and StringTi
 Here we provide an example of generating a parameter advisor set for a new RNA-seq sample via our model. 
 
 ## Download fastq files
+
+Download fastq files of the sample (SRA accession number:SRR9321872) from https://sra-explorer.info. 
