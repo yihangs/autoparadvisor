@@ -14,10 +14,16 @@ Download fastq files of the sample (e.g. SRA accession number:SRR1023790) from h
 2. Install the python dependencies: `pip install -r requirements.txt`, we use python 3.10.12.
 3. download all the files from kilthub, here we need to use the following files:
 
-   (1)
-4. Put the files described above, all the files from the folder `./files/`, and the scripts `autoparadvisor_contrastive.py`, `MinHash.capnp`, and `advisorset_generator.py` into the same folder, run the command: `python advisorset_generator.py --name SRR1023790 --fastqs SRR1023790_1.fastq.gz SRR1023790_2.fastq.gz --assembler scallop --top 5` (or `python advisorset_generator.py --name SRR1023790 --fastqs SRR1023790_1.fastq.gz SRR1023790_2.fastq.gz --assembler stringtie --top 5`). Here the value of `--top` is the size of the advisor set. top>=5 is recommended. 
+   (1) trained_scallop.pth: the trained parameter advising model for Scallop.
 
-5. Our script will output:
+   (2) trained_stringtie.pth: the trained parameter advising model for StringTie.
+
+   (3) train_features_withaug_scallop.npy: the set representations of all the samples in the representative set of Scallop, including all the samples from the data augmentation module.
+
+   (4) train_features_withaug_stringtie.npy: the set representations of all the samples in the representative set of StringTie, including all the samples from the data augmentation module.
+5. Put the files described above, all the files from the folder `./files/`, and the scripts `autoparadvisor_contrastive.py`, `MinHash.capnp`, and `advisorset_generator.py` into the same folder, run the command: `python advisorset_generator.py --name SRR1023790 --fastqs SRR1023790_1.fastq.gz SRR1023790_2.fastq.gz --assembler scallop --top 5` (or `python advisorset_generator.py --name SRR1023790 --fastqs SRR1023790_1.fastq.gz SRR1023790_2.fastq.gz --assembler stringtie --top 5`). Here the value of `--top` is the size of the advisor set. top>=5 is recommended. 
+
+6. Our script will output:
 
    (1) "SRR1023790.msh": Mash sketch of the sample.
    
