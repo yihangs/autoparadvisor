@@ -17,4 +17,8 @@ Download fastq files of the sample (e.g. SRA accession number:SRR1023790) from h
    (1)
 4. Put all the files from kilthub, from the folder `./files/`, and the scripts `autoparadvisor_contrastive.py`, `MinHash.capnp`, and `advisorset_generator.py` into the same folder, run the command: `python advisorset_generator.py --name SRR1023790 --fastqs SRR1023790_1.fastq.gz SRR1023790_2.fastq.gz --assembler scallop --top 5` (or `python advisorset_generator.py --name SRR1023790 --fastqs SRR1023790_1.fastq.gz SRR1023790_2.fastq.gz --assembler stringtie --top 5`). Here the value of `--top` is the size of the advisor set. top>=5 is recommended. 
 
-5. Our script will generate a folder `./SRR1023790_scallop_advisorset/` (or `./SRR1023790_stringtie_advisorset/`) and all the parameter candidates are stored there. 
+5. Our script will generate:
+
+   (1) "SRR1023790.msh": Mash sketch of the sample.
+   
+   (2) a folder `./SRR1023790_scallop_advisorset/` (or `./SRR1023790_stringtie_advisorset/`) and all the parameter candidates are stored there.   
