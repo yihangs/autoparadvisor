@@ -12,7 +12,7 @@ Download fastq files of the sample (e.g. SRA accession number:SRR1023790) from h
 
 1. Download Mash from https://mash.readthedocs.io/en/latest/.
 2. Install the python dependencies: `pip install -r requirements.txt`, we use python 3.10.12.
-3. download the necessary files from kilthub, it includes
+3. download all the files from kilthub, here we need to use the following files:
 
    (1)
 4. Put all the files from kilthub, from the folder `./files/`, and the scripts `autoparadvisor_contrastive.py`, `MinHash.capnp`, and `advisorset_generator.py` into the same folder, run the command: `python advisorset_generator.py --name SRR1023790 --fastqs SRR1023790_1.fastq.gz SRR1023790_2.fastq.gz --assembler scallop --top 5` (or `python advisorset_generator.py --name SRR1023790 --fastqs SRR1023790_1.fastq.gz SRR1023790_2.fastq.gz --assembler stringtie --top 5`). Here the value of `--top` is the size of the advisor set. top>=5 is recommended. 
