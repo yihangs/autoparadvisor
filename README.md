@@ -6,7 +6,7 @@ Here we provide an example of generating a parameter advisor set for a new RNA-s
 
 ## Download fastq files
 
-Download fastq files of the sample (SRA accession number:SRR1023790) from https://sra-explorer.info. 
+Download fastq files of the sample (e.g. SRA accession number:SRR1023790) from https://sra-explorer.info. 
 
 ## Generate advisor set
 
