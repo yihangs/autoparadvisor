@@ -27,4 +27,10 @@ Download fastq files of the sample (e.g. SRA accession number:SRR1023790) from h
 
    (1) "SRR1023790.msh": Mash sketch of the sample.
    
-   (2) a folder `./SRR1023790_scallop_advisorset/` (or `./SRR1023790_stringtie_advisorset/`) and all the parameter candidates are stored there.   
+   (2) a folder `./SRR1023790_scallop_advisorset/` (or `./SRR1023790_stringtie_advisorset/`) and all the parameter candidates are stored there.
+
+Other files: 
+
+   (1) representative_sample_scallop: accession numbers of 1263 representative samples for Scallop. 
+
+   (2) representative_sample_stringtie: accession numbers of 1235 representative samples for StringTie. 
