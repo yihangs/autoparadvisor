@@ -29,7 +29,7 @@ Download fastq files of the sample (e.g. SRA accession number:SRR1023790) from h
    
    (2) a folder `./SRR1023790_scallop_advisorset/` (or `./SRR1023790_stringtie_advisorset/`) and all the parameter candidates are stored there.
 
-## Other files: 
+## Other files
 
    (1) representative_sample_scallop: accession numbers of 1263 representative samples for Scallop. 
 
