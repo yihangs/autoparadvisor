@@ -13,7 +13,26 @@ In addition, we need to install the following packages and softwares:
 3. gffcompare: https://github.com/gpertea/gffcompare
 4. gtfcuff: https://github.com/Kingsford-Group/rnaseqtools
 
-## Setting YAML config 
+## Set YAML config 
 
-First, we need to download a gene annotation file (.gtf), e.g. https://www.gencodegenes.org/human/release_24.html. This file is for computing AUC values. 
+First, download a gene annotation file (.gtf), e.g. https://www.gencodegenes.org/human/release_24.html. This file is for computing AUC values. 
 
+Second, change the information in .yml file if needed. We have provided three YAML files for Scallop, Scallop2 (https://github.com/Shao-Group/scallop2), and StringTie, but one can also create new .yml for other softwares. 
+
+Take scallop.yml as an example, there are several places that users might need to change:
+
+1. the path of the transcript assembler (testing_software -> path)
+2. additional options for running transcript assemblers (testing_software -> additional_option), e.g. if the library type of the RNA-seq sample input is first, then add `--library_type first` to the additional option.
+3. parameter information (parameter_bounds)
+4. the path of gffcompare (evaluation-> the first 'path')
+5. the path of the gene annotation file (evaluation-> ref_file)
+6. the path of gtfcuff (evaluation-> the second 'path')
+7. the number of transcripts in the gene annotation file (evaluation-> transcript_num), you can obtain this value via the command `cat annotation.gtf | awk '{print $3}' | grep -c transcript`, this value will only affect the scale of the AUC values. 
+
+## Run CAWarm-BO
+
+To run CAWarm-BO on a RNA-seq sample e.g. accesion number: SRR307903, 
+
+1. Download .fastq files from SRA.
+2. Use RNA-seq aligner, such as STAR (https://github.com/alexdobin/STAR) to do the alignment, and sort the alignment output by coordinate, generating the bam file, e.g. SRR307903.bam.
+3. Run CAWarm-BO via the command `python main.py -p scallop --max_iters 200 --save_path SRR307903_scallop --input_file SRR307903.bam --cawarmup 60 --ard -a thompson --config_file scallop.yml` (or `python main.py -p stringtie --max_iters 200 --save_path SRR307903_stringtie --input_file SRR307903.bam --cawarmup 60 --ard -a thompson --config_file stringtie.yml`). The results will be stored in the folder SRR307903_scallop/. 
