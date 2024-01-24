@@ -25,7 +25,7 @@ parser.add_argument('--n_init', type=int, default=10, help='number of initialisi
 parser.add_argument('--save_path', type=str, default='output/', help='save directory of the log files')
 parser.add_argument('--ard', action='store_true', help='whether to enable automatic relevance determination')
 parser.add_argument('--cawarmup', type=int, default=0, help='whether to use coordinate ascent to warm up the process')
-parser.add_argument('-a', '--acq', type=str, default='ei', help='choice of the acquisition function.')
+parser.add_argument('-a', '--acq', type=str, default='thompson', help='choice of the acquisition function.')
 #parser.add_argument('--random_seed_objective', type=int, default=20, help='The default value of 20 is provided also in COMBO')
 parser.add_argument('-d', '--debug', action='store_true', help='Whether to turn on debugging mode (a lot of output will'
                                                                'be generated).')
