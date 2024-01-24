@@ -22,7 +22,7 @@ Second, change the information in .yml file if needed. We have provided three YA
 Take scallop.yml as an example, there are several places that users might need to change:
 
 1. the path of the transcript assembler (testing_software -> path)
-2. additional options for running transcript assemblers (testing_software -> additional_option), e.g. if the library type of the RNA-seq sample input is first, then add `--library_type first` to the additional option.
+2. additional options for running transcript assemblers (testing_software -> additional_option), e.g. if the library type of the RNA-seq sample input is "first", then add `--library_type first` to the additional option.
 3. parameter information (parameter_bounds)
 4. the path of gffcompare (evaluation-> the first 'path')
 5. the path of the gene annotation file (evaluation-> ref_file)
