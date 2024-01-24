@@ -35,7 +35,13 @@ To run CAWarm-BO on a RNA-seq sample e.g. accesion number: SRR307903,
 
 1. Download .fastq files from SRA.
 2. Use RNA-seq aligner, such as STAR (https://github.com/alexdobin/STAR) to do the alignment, and sort the alignment output by coordinate, generating the bam file, e.g. SRR307903.bam.
-3. Run CAWarm-BO via the command `python main.py -p scallop --max_iters 200 --save_path SRR307903_scallop --input_file SRR307903.bam --cawarmup 60 --ard -a thompson --config_file scallop.yml` (or `python main.py -p stringtie --max_iters 200 --save_path SRR307903_stringtie --input_file SRR307903.bam --cawarmup 60 --ard -a thompson --config_file stringtie.yml`). The results will be stored in the folder SRR307903_scallop/. 
+3. Run CAWarm-BO via the command `python main.py -p scallop --max_iters 200 --save_path SRR307903_scallop --input_file SRR307903.bam --cawarmup 60 --ard -a thompson --config_file scallop.yml` (or `python main.py -p stringtie --max_iters 200 --save_path SRR307903_stringtie --input_file SRR307903.bam --cawarmup 60 --ard -a thompson --config_file stringtie.yml`). The results will be stored in the folder SRR307903_scallop/. There are three output files:
+
+   (1) wall_clock.npy: the wall clock time for each iteration.
+
+   (2) X.npy: the queried parameter vector for each iteration. 
+
+   (3) Y.npy: the negative AUC values (*10^4) for each iteration. 
 
 CAWarm-BO supports the following parameters:
 | Parameter       | Default Value | Description                                                                                                 |
@@ -47,7 +53,7 @@ CAWarm-BO supports the following parameters:
 | --save_path     | output/       | save directory                                                                            |
 | --cawarmup      | 0             | whether to use coordinate ascent to warm up the process                                                     |
 | --ard           |               | whether to enable automatic relevance determination                                           |
-| -a              | ei            | choice of the acquisition function among ucb, ei, thompson                                                  |
+| -a              | thompson      | choice of the acquisition function among ucb, ei, thompson, please use thompson if there are integer valuables.                                                |
 | --input_file    | None          | The path of input file/files of software                                                                    |
 | --param_type    | mixed         | choice of parameter type among category or continuous or mixed                                              |
 | --config_file | scallop.yml     | The path for yaml config file        
