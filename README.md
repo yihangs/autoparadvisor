@@ -12,7 +12,7 @@ Download fastq files of the sample (e.g. SRA accession number:SRR1023790) from h
 
 1. Download Mash from https://mash.readthedocs.io/en/latest/.
 2. Install the python dependencies: `pip install -r requirements.txt`, we use python 3.10.12.
-3. download all the files from https://kilthub.cmu.edu (data is now under review), here we need to use the following files:
+3. download all the files from https://doi.org/10.1184/R1/25037156.v1, here we need to use the following files:
 
    (1) trained_scallop.pth: the trained parameter advising model for Scallop.
 
