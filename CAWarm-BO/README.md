@@ -51,7 +51,7 @@ CAWarm-BO supports the following parameters:
 | --n_trials      | 1            | Number of trials for the experiment                                                                         |
 | --n_init        | 10            | Number of initialising random points                                                                        |
 | --save_path     | output/       | save directory                                                                            |
-| --cawarmup      | 0             | whether to use coordinate ascent to warm up the process                                                     |
+| --cawarmup      | 0             | number of iterations for coordinating ascent to warm up the process                                                     |
 | --ard           |               | whether to enable automatic relevance determination                                           |
 | -a              | thompson      | choice of the acquisition function among ucb, ei, thompson, please use thompson if there are integer valuables.                                                |
 | --input_file    | None          | The path of input file/files of software                                                                    |
