@@ -1,6 +1,6 @@
 Here, we explain how to train our contrastive learning model. 
 
-1. download all the files from https://kilthub.cmu.edu (data is now under review), here we need to use the following files:
+1. download all the files from https://doi.org/10.1184/R1/25037156.v1, here we need to use the following files:
 
    (1) sim_train_scallop.npy: the similarity matrix between samples in the representative set of Scallop, including all the samples from the data augmentation module.
 
